@@ -1,0 +1,11 @@
+body {
+    padding: 10%;
+
+    background: #404040;
+    text-align: center;
+    color: #C0C0C0;
+}
+
+input {
+    border: solid 2px #808080;
+}
