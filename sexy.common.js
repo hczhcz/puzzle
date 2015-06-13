@@ -1,6 +1,7 @@
 'use strict';
 
 var level = 0;
+var level_load = undefined;
 var level_data = undefined;
 
 var init_key = 'hello';
@@ -27,7 +28,9 @@ var load_puzzle = function (key) {
     }
 };
 
-var init_puzzle = function (title, content, hint) {
+var init_puzzle = function (title, content, hint, canjump) {
+    level_load = level;
+
     $('#puzzle').empty();
 
     if (title) {
@@ -54,14 +57,19 @@ var init_puzzle = function (title, content, hint) {
             )
             .append(
                 $('<input />')
+                    .attr('id', 'go')
                     .attr('type', 'button')
                     .val('Go!')
                     .click(function () {
-                        ++level;
-                        load_puzzle($('#key').val());
-                        // for (level in level_data) {
-                        //     load_puzzle($('#key').val());
-                        // }
+                        if (canjump) {
+                            for (var i in level_data) {
+                                level = parseInt(i);
+                                load_puzzle($('#key').val());
+                            }
+                        } else {
+                            level = level_load + 1;
+                            load_puzzle($('#key').val());
+                        }
                     })
             )
     );
