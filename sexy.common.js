@@ -4,8 +4,7 @@ var level = 0;
 var level_load = undefined;
 var level_data = undefined;
 
-var init_key = 'hello';
-var last_key = init_key;
+var last_key = 'hello';
 
 var gen_puzzle = function (code, key) {
     var result = CryptoJS.AES.encrypt(code, last_key).toString();
