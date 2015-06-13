@@ -9,15 +9,12 @@
     <link rel='stylesheet' type='text/css' href='style.css' />
 </head>
 <body>
-    <h2 id='title'></h2>
-    <div id='content'></div>
-    <input id='key' type='text' />
-    <input id='go' type='button' value='Go!' />
+    <div id='puzzle'></div>
 
     <script src='jquery.js'></script>
     <script src='aes.js'></script>
     <script src='sexy.common.js'></script>
     <script src='sexy.puzzle.js'></script>
-    <script>load_puzzle(0, 'hello');</script>
+    <script>load_puzzle(init_key);</script>
 </body>
 </html>

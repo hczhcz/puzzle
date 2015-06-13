@@ -1,13 +1,25 @@
 'use strict';
 
-var levels = [];
+var level = 0;
+var level_data = undefined;
 
-var load_puzzle = function (index, key) {
+var init_key = 'hello';
+var last_key = init_key;
+
+var gen_puzzle = function (code, key) {
+    var result = CryptoJS.AES.encrypt(code, last_key).toString();
+
+    last_key = key;
+
+    return result;
+};
+
+var load_puzzle = function (key) {
     try {
         eval(
             CryptoJS
                 .AES
-                .decrypt(levels[index], key)
+                .decrypt(level_data[level], key)
                 .toString(CryptoJS.enc.Utf8)
         );
     } catch (e) {
@@ -15,8 +27,42 @@ var load_puzzle = function (index, key) {
     }
 };
 
-$('#go').click(function () {
-    for (var index in levels) {
-        load_puzzle(index, $('#key').val());
+var init_puzzle = function (title, content, hint) {
+    $('#puzzle').empty();
+
+    if (title) {
+        $('#puzzle').append(
+            $('<h2 />')
+                .text('Level ' + level + ': ' + title)
+        );
     }
-});
+
+    if (content) {
+        $('#puzzle').append(
+            $('<div />')
+                .append(content)
+        );
+    }
+
+    $('#puzzle').append(
+        $('<div />')
+            .append(
+                $('<input />')
+                    .attr('id', 'key')
+                    .attr('type', 'text')
+                    .val(hint ? hint : '')
+            )
+            .append(
+                $('<input />')
+                    .attr('type', 'button')
+                    .val('Go!')
+                    .click(function () {
+                        ++level;
+                        load_puzzle($('#key').val());
+                        // for (level in level_data) {
+                        //     load_puzzle($('#key').val());
+                        // }
+                    })
+            )
+    );
+};

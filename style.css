@@ -6,6 +6,10 @@ body {
     color: #C0C0C0;
 }
 
+div {
+    padding: 8px;
+}
+
 input {
     border: solid 2px #808080;
 }
