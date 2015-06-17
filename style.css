@@ -5,6 +5,7 @@ body {
     text-align: center;
     font-family: sans-serif;
     color: #C0C0C0;
+    min-width: 320px;
 }
 
 a {
@@ -18,3 +19,98 @@ div {
 input {
     border: solid 2px #808080;
 }
+
+#puzzle {
+    -webkit-perspective: 200px;
+    -moz-perspective: 200px;
+    -ms-perspective: 200px;
+    -o-perspective: 200px;
+    perspective: 200px;
+    -webkit-transition: all .07s linear;
+    -moz-transition: all .07s linear;
+    -ms-transition: all .07s linear;
+    -o-transition: all .07s linear;
+    transition: all .07s linear;
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    -ms-pointer-events: none;
+    -o-pointer-events: none;
+    padding: 0px;
+    height: 80px;
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+#puzzle:not(.active):hover #title, 
+#puzzle:not(.active):focus #title {
+    -wekbit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
+    -ms-transform: rotateX(-180deg);
+    -o-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+}
+
+#puzzle:not(.active):hover > div:not(:last-child), 
+#puzzle:not(.active):focus > div:not(:last-child) {
+    -webkit-transform: rotateX(0deg) translateZ(0px);
+    -moz-transform: rotateX(0deg) translateZ(0px);
+    -ms-transform: rotateX(0deg) translateZ(0px);
+    -o-transform: rotateX(0deg) translateZ(0px);
+    transform: rotateX(0deg) translateZ(0px);
+}
+
+#title,#puzzle > div:not(:last-child) {
+    display: block;
+    height: 40px;
+    width: 100%;
+    font-family: cursive;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#title {
+    -webkit-transform-origin: top;
+    -moz-transform-origin: top;
+    -ms-transform-origin: top;
+    -o-transform-origin: top;
+    transform-origin: top;
+    -webkit-transform: rotateX(0deg) translateZ(0px);
+    -moz-transform: rotateX(0deg) translateZ(0px);
+    -ms-transform: rotateX(0deg) translateZ(0px);
+    -o-transform: rotateX(0deg) translateZ(0px);
+    transform: rotateX(0deg) translateZ(0px);
+    background-color: #404040;
+    margin: 0px;
+    padding: 4px;
+}
+
+#puzzle > div:not(:last-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform-origin: bottom;
+    -moz-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    -o-transform-origin: bottom;
+    transform-origin: bottom;
+    -webkit-transform: rotateX(-90deg) translateZ(-25px);
+    -moz-transform: rotateX(-90deg) translateZ(-25px);
+    -ms-transform: rotateX(-90deg) translateZ(-25px);
+    -o-transform: rotateX(-90deg) translateZ(-25px);
+    transform: rotateX(-90deg) translateY(-25px);
+    background-color: transparent;
+    padding: 4px;
+    font-family: cursive;
+}
+

@@ -66,6 +66,11 @@ var init_puzzle = function (title, content, hint, loader) {
             $('<div />')
                 .append(content)
         );
+    } else {
+        $('#puzzle').append(
+            $('<div />')
+                .append(" ")
+        );
     }
 
     $('#puzzle').append(
