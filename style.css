@@ -26,15 +26,6 @@ input {
     -ms-perspective: 200px;
     -o-perspective: 200px;
     perspective: 200px;
-    -webkit-transition: all .07s linear;
-    -moz-transition: all .07s linear;
-    -ms-transition: all .07s linear;
-    -o-transition: all .07s linear;
-    transition: all .07s linear;
-    -webkit-pointer-events: none;
-    -moz-pointer-events: none;
-    -ms-pointer-events: none;
-    -o-pointer-events: none;
     padding: 0px;
     height: 80px;
     width: 100%;
@@ -109,3 +100,6 @@ input {
     font-family: cursive;
 }
 
+#go:active{
+    background:lightblue;
+}
