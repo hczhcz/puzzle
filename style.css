@@ -99,7 +99,7 @@ input {
     -ms-transform-origin: bottom;
     -o-transform-origin: bottom;
     transform-origin: bottom;
-    -wekbit-transform: rotateX(-90deg);
+    -webkit-transform: rotateX(-90deg);
     -moz-transform: rotateX(-90deg);
     -ms-transform: rotateX(-90deg);
     -o-transform: rotateX(-90deg);
