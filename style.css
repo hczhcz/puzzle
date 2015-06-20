@@ -26,15 +26,6 @@ input {
     -ms-perspective: 200px;
     -o-perspective: 200px;
     perspective: 200px;
-    -webkit-transition: all .07s linear;
-    -moz-transition: all .07s linear;
-    -ms-transition: all .07s linear;
-    -o-transition: all .07s linear;
-    transition: all .07s linear;
-    -webkit-pointer-events: none;
-    -moz-pointer-events: none;
-    -ms-pointer-events: none;
-    -o-pointer-events: none;
     padding: 0px;
     height: 80px;
     width: 100%;
@@ -53,11 +44,11 @@ input {
 
 #puzzle:not(.active):hover > div:not(:last-child), 
 #puzzle:not(.active):focus > div:not(:last-child) {
-    -webkit-transform: rotateX(0deg) translateZ(0px);
-    -moz-transform: rotateX(0deg) translateZ(0px);
-    -ms-transform: rotateX(0deg) translateZ(0px);
-    -o-transform: rotateX(0deg) translateZ(0px);
-    transform: rotateX(0deg) translateZ(0px);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg);
+    transform: rotateX(0deg);
 }
 
 #title,#puzzle > div:not(:last-child) {
@@ -85,11 +76,6 @@ input {
     -ms-transform-origin: top;
     -o-transform-origin: top;
     transform-origin: top;
-    -webkit-transform: rotateX(0deg) translateZ(0px);
-    -moz-transform: rotateX(0deg) translateZ(0px);
-    -ms-transform: rotateX(0deg) translateZ(0px);
-    -o-transform: rotateX(0deg) translateZ(0px);
-    transform: rotateX(0deg) translateZ(0px);
     background-color: #404040;
     margin: 0px;
     padding: 4px;
@@ -104,13 +90,16 @@ input {
     -ms-transform-origin: bottom;
     -o-transform-origin: bottom;
     transform-origin: bottom;
-    -webkit-transform: rotateX(-90deg) translateZ(-25px);
-    -moz-transform: rotateX(-90deg) translateZ(-25px);
-    -ms-transform: rotateX(-90deg) translateZ(-25px);
-    -o-transform: rotateX(-90deg) translateZ(-25px);
-    transform: rotateX(-90deg) translateY(-25px);
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    -o-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
     background-color: transparent;
     padding: 4px;
     font-family: cursive;
 }
 
+#go:active{
+    background:lightblue;
+}
